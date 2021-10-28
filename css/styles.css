@@ -5,8 +5,7 @@
    --accent-color: #2196F3;
    --hero-footer-bg-color: #2F303A;
    --secondary-bg-color: #F5F4FA;
-   --primary-font-size: 14px;
-   
+   --primary-font-size: 14px;   
 }
 
 body {
@@ -521,8 +520,7 @@ img {
 }
 
 .social-footer {
-    display: block;
-    
+    display: block;    
 }
 
 .social-footer-title {
@@ -578,6 +576,9 @@ justify-content: center;
     min-width: 100%;
     min-height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -585,13 +586,19 @@ justify-content: center;
     pointer-events: none;
 }
 
+.backdrop.is-hidden .modal {
+    transform:  translate(-50%, -50%) scale(1.1);
+}
+
 .modal {  
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    
     width: 530px;
     height: 580px;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: var(--hero-text-color);
 }
 
