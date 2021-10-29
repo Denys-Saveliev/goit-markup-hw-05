@@ -725,10 +725,9 @@ justify-content: center;
     background: rgba(33, 150, 243, 0.9);
 }
 
-.cards-link:hover .image-overlay::before {
-    position: absolute;
-    transform: translateY(0);
-    color: var(--hero-text-color);    
+.cards-link:hover .image-overlay::before,
+.cards-link:focus .image-overlay::before {
+    transform: translateY(0);        
 }
 
 .text-overlay {
@@ -746,7 +745,8 @@ justify-content: center;
     color: var(--hero-text-color);
 }
 
-.cards-link:hover .text-overlay {
+.cards-link:hover .text-overlay,
+.cards-link:focus .text-overlay {
     opacity: 1;    
 }
 
